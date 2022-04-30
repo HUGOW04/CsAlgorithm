@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    internal class Program
+    {
+        static void Infinite(int number)
+        {
+            int steps = 1;
+            Console.Write("x = " + number + " ");
+            while (true)
+            {
+
+                if (number == 1)
+                {
+                    Console.WriteLine(" Steps: " + steps);
+                    break;
+                }
+                else if (number % 2 != 0)
+                {
+
+                    steps++;
+                    number = number * 3 + 1;
+                }
+                else
+                {
+                    steps++;
+                    number = number / 2;
+                }
+            }
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("3x+1");
+            Console.WriteLine();
+            for(int i = 1; i <= 1000; i++)
+            {
+                Infinite(i);
+
+            }
+            Console.ReadKey();
+        }
+    }
+}
